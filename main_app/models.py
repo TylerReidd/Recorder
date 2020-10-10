@@ -8,8 +8,3 @@ class Record:
         self.genre = genre
         self.review = review
 
-records = [
-    Record('Aja', 1977, 'jazz-rock?', 'A reaally good album'),
-    Record('blue', 1977, 'folk-jazz?', 'pretty good album. Good color'),
-    Record('Sail Away', 1970, 'rock', 'one of the best ')
-]
