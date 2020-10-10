@@ -1,13 +1,22 @@
 from django.shortcuts import render
 from .models import Record
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+
 # Create your views here.
 
 class RecordCreate(CreateView):
     model = Record
     fields = '__all__'
 
+class RecordUpdate(UpdateView):
+    model = Record
+    fields = ['release_year', 'genre', 'review']
 
+class RecordDelete(DeleteView):
+    model = Record
+    success_url = '/records/'
+
+    
 def home(request):
     return render('<h1>RECORDS HERE</h1>')
 

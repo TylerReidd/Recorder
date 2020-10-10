@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 # Create your models here.
 class Record(models.Model):
@@ -6,3 +7,9 @@ class Record(models.Model):
     release_year = models.IntegerField()
     genre = models.CharField(max_length=100)
     review = models.CharField(max_length=1000)
+
+    def __str__(self):
+        return self.title
+
+    def get_absolute_url(self):
+        return reverse('detail', kwargs={'record_id': self.id})
