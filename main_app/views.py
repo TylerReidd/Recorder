@@ -12,3 +12,7 @@ def about(request):
 def records_index(request):
     records = Record.objects.all()
     return render(request, 'records/index.html', { 'records': records })
+
+def records_detail(request, record_id):
+    record = record.objects.get(id=record_id)
+    return render(request, 'record/detail.html', {'record', record})
