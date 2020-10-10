@@ -1,6 +1,11 @@
 from django.shortcuts import render
 from .models import Record
+from django.views.generic.edit import CreateView
 # Create your views here.
+
+class RecordCreate(CreateView):
+    model = Record
+    fields = '__all__'
 
 
 def home(request):
@@ -16,3 +21,4 @@ def records_index(request):
 def records_detail(request, record_id):
     record = Record.objects.get(id=record_id)
     return render(request, 'records/detail.html', {'record': record})
+
