@@ -1,10 +1,8 @@
 from django.db import models
 
 # Create your models here.
-class Record: 
-    def __init__(self, title, release_year, genre, review):
-        self.title = title
-        self.release_year = release_year
-        self.genre = genre
-        self.review = review
-
+class Record(models.Model):
+    title = models.CharField(max_length=100)
+    release_year = models.IntegerField()
+    genre = models.CharField(max_length=100)
+    review = models.CharField(max_length=1000)
