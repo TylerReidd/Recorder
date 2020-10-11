@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Sell Record</h1>
+
+<h4>Are you sure you want to ditch this record: <span class='green-text'>{{ object.title }}</span>?</h4>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <input type="submit" value="Frisbee!" class="btn">
+    <a href="{% url 'detail' record.id %}" >Not Yet</a>
+</form>
+{% endblock %}

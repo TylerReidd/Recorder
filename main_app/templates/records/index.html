@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>My Collection</h1>
+
+{% for record in records %}
+<div class='card'>
+    <a href="{% url 'detail' record.id %}">
+    <div class='card-content'>
+        <span class='card-title'>{{ record.title}}</span>
+        <p>Released: {{record.release_year }}</p>
+        <p>Genre: {{record.genre}}</p>
+        <p>Review: {{record.review}}</p>
+    </div>
+    </a>
+</div>
+{% endfor %}
+
+{% endblock %}
