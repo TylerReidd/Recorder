@@ -12,7 +12,6 @@ class Record(models.Model):
         return self.title
 
     def get_absolute_url(self):
-<<<<<<< HEAD
         return reverse('detail', kwargs={'record_id': self.id})
 
 class Song(models.Model):
@@ -20,6 +19,3 @@ class Song(models.Model):
     songwriter = models.CharField(max_length=100)
     producer = models.CharField(max_length=100)
     record = models.ForeignKey(Record, on_delete=models.CASCADE)
-=======
-        return reverse('detail', kwargs={'record_id': self.id})
->>>>>>> 32f0a0296d1484c6f0d64eaf8a78e2c3c09839e9
