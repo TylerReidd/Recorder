@@ -30,7 +30,7 @@ def records_detail(request, record_id):
     record = Record.objects.get(id=record_id)
     song_form = SongForm()
     artist_form = ArtistForm()           
-    return render(request, 'records/detail.html', {'record': record, 'song_form': song_form, 'arist_form': artist_form})
+    return render(request, 'records/detail.html', {'record': record, 'song_form': song_form, 'artist_form': artist_form})
 
 def add_song(request, record_id):
     form = SongForm(request.POST)
