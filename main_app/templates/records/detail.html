@@ -37,6 +37,29 @@
             {% endfor %}
         </tbody>
     </table>
+</div>
+
+
+<div class="col s6">
+    <form action="{% url 'add_artist' record.id %}" method="post">
+        {% csrf_token %}
+        {{ artst_form.as_p }}
+        <input type="submit" class='btn' value="Add Artist">
+    </form>
+    <table class='striped'>
+        <thead>
+            <tr><th>{{artist.name}}</th><th>{{artist.record}}</th><th>{{artist.song}}</th></tr>
+        </thead>
+        <tbody>
+            {% for artist in record.artist_set.all %}
+            <tr>
+                <td>{{artist.name}}</td>
+                <td>{{artist.record}}</td>
+                <td>{{artist.song}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 
 </div>
 

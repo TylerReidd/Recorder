@@ -2,6 +2,8 @@ from django.db import models
 from django.urls import reverse
 
 # Create your models here.
+
+
 class Record(models.Model):
     title = models.CharField(max_length=100)
     release_year = models.IntegerField()
@@ -19,3 +21,8 @@ class Song(models.Model):
     songwriter = models.CharField(max_length=100)
     producer = models.CharField(max_length=100)
     record = models.ForeignKey(Record, on_delete=models.CASCADE)
+
+class Artist(models.Model):
+    name = models.CharField(max_length=100)
+    record = models.ForeignKey(Record, on_delete=models.CASCADE)
+    song = models.ForeignKey(Song, on_delete=models.CASCADE)
