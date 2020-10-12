@@ -5,6 +5,7 @@ from django.urls import reverse
 
 
 class Record(models.Model):
+    artist = models.CharField(max_length=100)
     title = models.CharField(max_length=100)
     release_year = models.IntegerField()
     genre = models.CharField(max_length=100)
@@ -22,7 +23,3 @@ class Song(models.Model):
     producer = models.CharField(max_length=100)
     record = models.ForeignKey(Record, on_delete=models.CASCADE)
 
-class Artist(models.Model):
-    name = models.CharField(max_length=100)
-    record = models.ForeignKey(Record, on_delete=models.CASCADE)
-    song = models.ForeignKey(Song, on_delete=models.CASCADE)
