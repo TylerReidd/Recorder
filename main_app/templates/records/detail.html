@@ -17,6 +17,18 @@
         <a href="{% url 'records_delete' record.id %}">Delete</a>
     </div>
 </div>
+{% for photo in record.photo_set.all %}
+<img class="responsive-im card-panel" src="{{photo.url}}" >
+{% empty %}
+<div class="card-panel center-align">No Photos To Display</div>
+{% endfor %}
+
+<form action="{% url 'add_photo' record.id %}" enctype="multipart/form-data" method="POST" class="card-panel">
+    {% csrf_token %}
+    <input type="file" name="photo_file">
+    <br><br>
+    <input type="submit" class='btn' value="Upload Photo">
+</form>
 <div class="col s6">
     <form action="{% url 'add_song' record.id %}"method="post">
         {% csrf_token %}

@@ -129,3 +129,4 @@ STATIC_URL = '/static/'
 LOGIN_REDIRECT_URL = '/records/'
 
 LOGOUT_REDIRECT_URL = '/'
+
