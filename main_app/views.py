@@ -43,7 +43,7 @@ def add_photo(request, record_id):
             photo.save()
         except:
             print('An error occured uploading file to s3')
-        return redirect('detail', record_id=record_id)
+    return redirect('detail', record_id=record_id)
 
 class RecordCreate(CreateView):
     model = Record
