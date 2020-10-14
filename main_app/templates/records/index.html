@@ -1,9 +1,11 @@
 {% extends 'base.html' %}
+
 {% block content %}
 
-<h1>My Collection</h1>
 
 {% for record in records %}
+
+<div class="cards">
 <div class='card'>
     <a href="{% url 'detail' record.id %}">
     <div class='card-content'>
@@ -14,6 +16,7 @@
         <p>Review: {{record.review}}</p>
     </div>
     </a>
+</div>
 </div>
 {% endfor %}
 
