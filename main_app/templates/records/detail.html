@@ -6,58 +6,68 @@
 
     <h1>Liner Notes</h1>
 </header>
+<div class='container'>
+    <div id='detail' class="card">
+        <div class="card-content">
+            <span class="card-title">{{record.title}}</span>
+            <p>{{record.artist}}</p>
+            <p>Release: {{record.release_year}}</p>
+            <p>Genre: {{record.genre}}</p>
+            <p>Review: {{record.review}}</p>
+        </div>
 
-<div id='detail' class="card">
-    <div  class="card-content">
-        <span class="card-title">{{record.title}}</span>
-        <p>{{record.artist}}</p>
-        <p>Release: {{record.release_year}}</p>
-        <p>Genre: {{record.genre}}</p>
-        <p>Review: {{record.review}}</p>
+        <div>
+            <a href="{% url 'records_update' record.id %}">Edit</a>
+            <a href="{% url 'records_delete' record.id %}">Delete</a>
+        </div>
     </div>
     <div>
-        <a href="{% url 'records_update' record.id %}">Edit</a>
-        <a href="{% url 'records_delete' record.id %}">Delete</a>
+        {% for photo in record.photo_set.all %}
+        <img class="responsive-im card-panel" src="{{photo.url}}">
+        {% empty %}
+        <div class="card-panel center-align">No Photos To Display</div>
+        {% endfor %}
+    </div>
+
+
+    <div class='parentContainer'>
+        <form action="{% url 'add_photo' record.id %}" enctype="multipart/form-data" method="POST" class="card-panel">
+            {% csrf_token %}
+            <input type="file" name="photo-file">
+            <br><br>
+            <input type="submit" class='btn' value="Upload Photo">
+        </form>
     </div>
 </div>
-{% for photo in record.photo_set.all %}
-<img class="responsive-im card-panel" src="{{photo.url}}" >
-{% empty %}
-<div class="card-panel center-align">No Photos To Display</div>
-{% endfor %}
-
-<form action="{% url 'add_photo' record.id %}" enctype="multipart/form-data" method="POST" class="card-panel">
-    {% csrf_token %}
-    <input type="file" name="photo-file">
-    <br><br>
-    <input type="submit" class='btn' value="Upload Photo">
-</form>
 <div class="col s6">
-    <form action="{% url 'add_song' record.id %}"method="post">
+    <form action="{% url 'add_song' record.id %}" method="post">
         {% csrf_token %}
         {{ song_form.as_p }}
         <input type="submit" class='btn' value="Add Favorite">
     </form>
+    <div class="container">
     <table class='striped'>
         <thead>
-            <tr><th>{{song.title}}</th><th>{{song.songwriter}}</th><th>{{song.producer}}</th><th>{{song.record}}</th></tr>
+            <tr style="color: white">
+                <th>Title</th>
+                <th>Artist</th>
+            </tr>
         </thead>
         <tbody>
             {% for song in record.song_set.all %}
-            <tr>
+            <tr style="color:white">
                 <td>{{song.title}}</td>
                 <td>{{song.songwriter}}</td>
-                <td>{{song.producer}}</td>
-                <td>{{song.record}}</td>
-                <td>Review: {{record.review}}</td>
+
             </tr>
             {% endfor %}
         </tbody>
     </table>
 </div>
+</div>
 
 
 
-    
+
 
 {% endblock %}
