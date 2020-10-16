@@ -28,6 +28,9 @@ RecOrder The purpose of this app is to keep track of your record collection elec
 - Heroku
 - Imgur
 - Github
+- Trello
+- Wireframe.cc
+- Lucidchart
   
   # GETTING STARTED
  - https://trello.com/b/Yk8DS3Lh/record-collector
@@ -36,9 +39,9 @@ RecOrder The purpose of this app is to keep track of your record collection elec
 # NEXT STEPS 
 
 - Create Index of Favorite Albums and wishlist albums
-- Send, Load, and Save PDFs of E-Material
-- Chatroom/Friend options
-- Spotify API to save favorites
-- Add small checkpoint quizzes
-- Enable students to upload their own recorded material 
+- Search/purchase feature
+- Offer/request trades with other users
+- Trade review/trustworthy user feature
+- Spotify API to sample songs you might like
 - Customizable profiles
+- Enable users to visit other users profiles and view their collections
