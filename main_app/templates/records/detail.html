@@ -10,10 +10,10 @@
     <div id='detail' class="card">
         <div class="card-content">
             <span class="card-title">{{record.title}}</span>
-            <p>{{record.artist}}</p>
-            <p>Release: {{record.release_year}}</p>
-            <p>Genre: {{record.genre}}</p>
-            <p>Review: {{record.review}}</p>
+            <p>{{record.artist}}</p><br>
+            <p>Release: {{record.release_year}}</p><br>
+            <p>Genre: {{record.genre}}</p><br>
+            <p>Review: <br>{{record.review}}</p><br>
             <div>
                 <a class="btn" href="{% url 'records_update' record.id %}">Edit</a>
                 <a class="btn" href="{% url 'records_delete' record.id %}">Delete</a>
