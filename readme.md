@@ -11,9 +11,18 @@ RecOrder The purpose of this app is to keep track of your record collection elec
 
 ![](https://i.imgur.com/MMtdZ7k.png)
 
+![](https://i.imgur.com/MEpED2j.png)
+
+![](https://i.imgur.com/eySkpPN.png)
+![](https://i.imgur.com/D2aGwxN.png)
+![](https://i.imgur.com/BWh3JD2.png)
+![]()
+
 # TECHNOLOGIES USED: 
 - Python
-- HTML/CSS/Materialize
+- HTML
+- CSS
+- Materialize
 - Python
 - Django 
 - Heroku
