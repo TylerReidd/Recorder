@@ -4,7 +4,7 @@
 {% block content %}
 <header>
 
-    <h1>Liner Notes</h1>
+    <h1 class="grey-text">Liner Notes</h1>
 </header>
 <div class='container'>
     <div id='detail' class="card">
@@ -14,12 +14,12 @@
             <p>Release: {{record.release_year}}</p>
             <p>Genre: {{record.genre}}</p>
             <p>Review: {{record.review}}</p>
+            <div>
+                <a class="btn" href="{% url 'records_update' record.id %}">Edit</a>
+                <a class="btn" href="{% url 'records_delete' record.id %}">Delete</a>
+            </div>
         </div>
 
-        <div>
-            <a href="{% url 'records_update' record.id %}">Edit</a>
-            <a href="{% url 'records_delete' record.id %}">Delete</a>
-        </div>
     </div>
     <div>
         {% for photo in record.photo_set.all %}
@@ -39,8 +39,9 @@
         </form>
     </div>
 </div>
-<div class="col s6">
-    <form action="{% url 'add_song' record.id %}" method="post">
+<div class="col s6 grey-text">
+    
+    <form class="grey-text" action="{% url 'add_song' record.id %}" method="post">
         {% csrf_token %}
         {{ song_form.as_p }}
         <input type="submit" class='btn' value="Add Favorite">

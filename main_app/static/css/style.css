@@ -28,8 +28,15 @@ form {
   align-items: center;
   justify-content: center;
 }
+.cards {
+  border-radius: 10px;
+}
 
-
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
 /* .album-cards {
   width: 400px !important;
 } */
