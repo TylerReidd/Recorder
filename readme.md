@@ -1,5 +1,5 @@
 # APP TITLE
-Logress: The purpose of this app is to log student progress, create goals, and present challenges and achievements in an easily digestible and tangible format. All the basic needs for a student including: Metronome, Tuner, a Question Board, and a list of goals are provided.
+RecOrder The purpose of this app is to keep track of your record collection electronically. You can create an index of records you have, remove records you've sold or traded, and post images of records, sheet music, and list your favorite tracks on a details page. 
 
 # SCREENSHOTS
 
@@ -21,12 +21,12 @@ Logress: The purpose of this app is to log student progress, create goals, and p
 - Github
   
   # GETTING STARTED
- - https://trello.com/b/buwo3JmL/unit-2-proj-board
- - https://serene-headland-76600.herokuapp.com/
+ - https://trello.com/b/Yk8DS3Lh/record-collector
+ - https://rec0rder.herokuapp.com/records/
 
 # NEXT STEPS 
 
-- Link Customized videos to pages for students
+- Create Index of Favorite Albums and wishlist albums
 - Send, Load, and Save PDFs of E-Material
 - Chatroom/Friend options
 - Spotify API to save favorites
